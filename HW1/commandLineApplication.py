@@ -1,6 +1,6 @@
 
 
-def palindrome(txt):
+def isPalindrome(txt):
     '''
         check palindrome using two pointers :
           start and end which pointer to first char and last char ,
@@ -14,7 +14,7 @@ def palindrome(txt):
         end-=1
     return True
 
-def lower(txt):
+def isLower(txt):
     '''
         check if all characters in text is lower case
     '''
@@ -23,7 +23,7 @@ def lower(txt):
             return False
     return True
 
-def digit(txt):
+def isDigit(txt):
     '''
         check if all characters is digits
     '''
@@ -32,20 +32,20 @@ def digit(txt):
             return False
     return True
 
-def long(txt):
+def isLong(txt):
     return len(txt) > 15
 
-def empty(txt):
+def isEmpty(txt):
     return len(txt) == 0
 
 
 # create operation list and use labmda functions to build the output
 operation_list = {
-    '1' : ('Palindrome: Check if the input is Palindrome', lambda txt : "The input is Palindrome.\n" if palindrome(txt) else "The input is NOT Palindrome.\n"),
-    '2' : ('Lower: Check if all characters in the input are lowercase', lambda txt : "The input is lowercase.\n" if lower(txt) else "The input is NOT lowercase.\n"),
-    '3' : ('Digit: Check if all characters in the input are digits', lambda txt: "The input is all digits .\n" if digit(txt) else "The input is NOT all digits.\n"),
-    '4' : ('Long: Check if the input length is longer than 15', lambda txt: "The input is longer than 15 .\n" if long(txt) else "The input is NOT longer than 15 .\n"),
-    '5' : ('Empty: Check if the input is empty.', lambda txt: "The input is empty .\n" if empty(txt) else "The input is NOT empty .\n"),
+    '1' : ('Palindrome: Check if the input is Palindrome', lambda txt : "The input is Palindrome.\n" if isPalindrome(txt) else "The input is NOT Palindrome.\n"),
+    '2' : ('Lower: Check if all characters in the input are lowercase', lambda txt : "The input is lowercase.\n" if isLower(txt) else "The input is NOT lowercase.\n"),
+    '3' : ('Digit: Check if all characters in the input are digits', lambda txt: "The input is all digits .\n" if isDigit(txt) else "The input is NOT all digits.\n"),
+    '4' : ('Long: Check if the input length is longer than 15', lambda txt: "The input is longer than 15 .\n" if isLong(txt) else "The input is NOT longer than 15 .\n"),
+    '5' : ('Empty: Check if the input is empty.', lambda txt: "The input is empty .\n" if isEmpty(txt) else "The input is NOT empty .\n"),
     '6' : ('Exit', None)
 }
 

@@ -2,9 +2,9 @@ from Matrix import Matrix
 import random
 
 class GoldRush(Matrix):
-    COIN = '_COIN_'
+    COIN = '_$$_'
     WALL = '_WALL_'
-    DOT = '  .  '
+    EMPTY = '  .  '
     PLAYER1 = 'player1'
     PLAYER2 = 'player2'
     MIN_COIN = 10
@@ -20,7 +20,7 @@ class GoldRush(Matrix):
         self.coins = 0
         
     def _set_coinOrDot(self,col,row):
-        rand_element = self.COIN if random.randint(0, 1) else self.DOT
+        rand_element = self.COIN if random.randint(0, 1) else self.EMPTY
         self.matrix[col][row] = rand_element
         return 1 if rand_element == self.COIN else 0
 
@@ -68,7 +68,7 @@ class GoldRush(Matrix):
         if self.matrix[new_row][new_col] not in [self.WALL, other_player]:
             if self.matrix[new_row][new_col] == self.COIN:
                 self._add_score(player)
-            self.matrix[curr_row][curr_col] = self.DOT
+            self.matrix[curr_row][curr_col] = self.EMPTY
             self.matrix[new_row][new_col] = player
 
         return self._check_win(player)
