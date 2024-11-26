@@ -1,5 +1,6 @@
 import random
 from datetime import datetime, timedelta
+from statistics import mean
 
 class Person:
     def __init__(self, name, age):
@@ -84,6 +85,7 @@ class Course:
             return 0
         total_grades = sum(sum(student.grades[self]) for student in self.students)
         total_grades_count = sum(len(student.grades[self]) for student in self.students) #bug we count number of grades so we get len of (student.grades[self])
+        print(total_grades / total_grades_count if total_grades_count > 0 else 0)
         return total_grades / total_grades_count if total_grades_count > 0 else 0
 
 class School:

@@ -12,7 +12,7 @@ class Student(Person):
         self.student_id = student_id
         self.courses = []
         self.grades = {}
-        self.attendence = {} 
+        self.attendance = {} 
 
     def enroll(self, course):
         if course not in self.courses:
@@ -40,9 +40,9 @@ class Student(Person):
 
     def record_attendance(self, course, date, present):
         #bug 1 : attendence insted of attendance
-        if course not in self.attendence:
-            self.attendence[course] = {}
-        self.attendence[course][date] = present
+        if course not in self.attendance:
+            self.attendance[course] = {}
+        self.attendance[course][date] = present
 
 class Teacher(Person):
     def __init__(self, name, age, employee_id):
