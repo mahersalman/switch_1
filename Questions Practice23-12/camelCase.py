@@ -27,8 +27,26 @@ def to_camelCase(str):
     return result
 
 
+
 # approach 2 : O(n) 
+def remove_extra_spaces(str):
+    result = ""
+    current = 0
+    while str[current] == " ":
+        current+=1
+
+    while current < len(str):
+        if str[current] == " ":
+            while str[current] == " ":
+                current+=1
+            result += " "
+            continue
+        result += str[current]
+        current +=1
+    return result
+            
 def to_camelCase_2(str):
+    str = remove_extra_spaces(str)
     if len(str) == 0:
         return ''
     
@@ -51,6 +69,6 @@ def to_camelCase_2(str):
     return result
 
 
-
+print(to_camelCase_2('   camel  is an animal')) # camelCase
 
 
