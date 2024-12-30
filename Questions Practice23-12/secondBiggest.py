@@ -1,15 +1,15 @@
 
 
-def find_second_biggest_element(arr):
-    if len(arr) < 2:
+def find_second_biggest_element(numbers):
+    if len(numbers) < 2:
         return None
     first = second = float('-inf')
-    for i in arr:
-        if i > first:
+    for curr in numbers:
+        if curr > first:
             second = first
-            first = i
-        elif first > i > second:
-            second = i
+            first = curr
+        elif first > curr > second:
+            second = curr
     return second if second != float('-inf') else None
 
 print(find_second_biggest_element([1, 2, 3, 4, 5]))  # Output: 4
